@@ -18,8 +18,14 @@
     </style>
 </head>
 <body>
-    <canvas></canvas>
+    <canvas id="myCanvas" height="480" width="320"></canvas>
 
-    <script></script>
+    <script>
+        let canvas = document.getElementById('myCanvas');
+        let ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+        ctx.rect(20, 40, 50, 50);
+    </script>
 </body>
 </html>
