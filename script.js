@@ -26,10 +26,11 @@ let canvas = document.getElementById('myCanvas');
 
         let dx = 2;
         let dy = -2;
+        let ballRadius = 10;
 
         drawBall = () => {
             ctx.beginPath();
-            ctx.arc(x, y, 10, 0, Math.PI * 2);
+            ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
@@ -45,3 +46,7 @@ let canvas = document.getElementById('myCanvas');
         }
 
         setInterval(draw, 10);
+
+        if (y + dy > canvas.height || y + dy < 0){
+            dy = -dy;
+        }
