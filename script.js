@@ -21,7 +21,10 @@ let canvas = document.getElementById('myCanvas');
 
         */
 
-        function draw(){
+        let x = canvas.width/2;
+        let y = canvas.height - 30;
+
+        draw = () => {
             ctx.beginPath();
             ctx.arc(50, 50, 10, 0, Math.PI * 2);
             ctx.fillStyle = "#0095DD";
