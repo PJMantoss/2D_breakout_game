@@ -27,13 +27,18 @@ let canvas = document.getElementById('myCanvas');
         let dx = 2;
         let dy = -2;
 
-        draw = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, 10, 0, Math.PI * 2);
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
+        }
+
+        draw = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            drawBall();
 
             x += dx;
             y += dy;
