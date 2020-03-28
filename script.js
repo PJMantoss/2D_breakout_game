@@ -43,14 +43,14 @@ let canvas = document.getElementById('myCanvas');
 
             x += dx;
             y += dy;
+
+            if (y + dy > canvas.height || y + dy < 0){
+                dy = -dy;
+            }
+    
+            if (x + dx > canvas.width || x + dx < 0){
+                dx = -dx;
+            }
         }
 
         setInterval(draw, 10);
-
-        if (y + dy > canvas.height || y + dy < 0){
-            dy = -dy;
-        }
-
-        if (x + dx > canvas.width || x + dx < 0){
-            dx = -dx;
-        }
