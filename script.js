@@ -50,3 +50,7 @@ let canvas = document.getElementById('myCanvas');
         if (y + dy > canvas.height || y + dy < 0){
             dy = -dy;
         }
+
+        if (x + dx > canvas.width || x + dx < 0){
+            dx = -dx;
+        }
