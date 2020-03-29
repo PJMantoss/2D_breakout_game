@@ -80,6 +80,12 @@ let canvas = document.getElementById('myCanvas');
             }
         }
 
-        keyUpHandler = (e) => {}
+        keyUpHandler = (e) => {
+            if (e.key == "Right" || e.key == "ArrowRight"){
+                rightPressed = false;
+            } else if (e.key == "Left" || e.key == "ArrowLeft"){
+                leftPressed = false;
+            }
+        }
 
         setInterval(draw, 10);
