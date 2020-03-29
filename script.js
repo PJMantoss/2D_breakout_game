@@ -40,6 +40,11 @@ let canvas = document.getElementById('myCanvas');
             ctx.closePath();
         }
 
+        drawPaddle = () => {
+            ctx.beginPath();
+            ctx.closePath();
+        }
+
         draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
