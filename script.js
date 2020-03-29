@@ -33,24 +33,26 @@ let canvas = document.getElementById('myCanvas');
         let paddleX = (canvas.width-paddleWidth) / 2;
         //let paddleY = canvas.height-paddleHeight;
 
-        let leftPressed = false;
         let rightPressed = false;
+        let leftPressed = false;
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
 
-        keyDownHandler = (e) => {
+        keyDownHandler = e => {
             if(e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = true;
-            }else if (e.key == "Left" || e.key == "ArrowLeft"){
+            }
+            else if (e.key == "Left" || e.key == "ArrowLeft"){
                 leftPressed = true;
             }
         }
 
-        keyUpHandler = (e) => {
+        keyUpHandler = e => {
             if (e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = false;
-            } else if (e.key == "Left" || e.key == "ArrowLeft"){
+            } 
+            else if(e.key == "Left" || e.key == "ArrowLeft"){
                 leftPressed = false;
             }
         }
@@ -77,9 +79,6 @@ let canvas = document.getElementById('myCanvas');
             drawBall();
             drawPaddle();
 
-            x += dx;
-            y += dy;
-
             if (y + dy > canvas.height-ballRadius || y + dy < ballRadius){
                 dy = -dy;
             }
@@ -100,6 +99,9 @@ let canvas = document.getElementById('myCanvas');
                     paddleX = 0;
                 }
             }
+
+            x += dx;
+            y += dy;
         }
 
         setInterval(draw, 10);
