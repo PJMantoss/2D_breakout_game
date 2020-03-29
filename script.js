@@ -67,6 +67,13 @@ let canvas = document.getElementById('myCanvas');
             if (x + dx > canvas.width-ballRadius || x + dx < ballRadius){
                 dx = -dx;
             }
+
+            if (rightPressed){
+                paddleX += 7;
+            }
+            else if (leftPressed){
+                paddleX -= 7;
+            }
         }
 
         document.addEventListener("keydown", keyDownHandler, false);
