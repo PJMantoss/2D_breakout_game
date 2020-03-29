@@ -31,7 +31,7 @@ let canvas = document.getElementById('myCanvas');
         let paddleHeight = 10;
         let paddleWidth = 75;
         let paddleX = (canvas.width-paddleWidth) / 2;
-        let paddleY = canvas.height-paddleHeight;
+        //let paddleY = canvas.height-paddleHeight;
 
         let leftPressed = false;
         let rightPressed = false;
@@ -46,7 +46,7 @@ let canvas = document.getElementById('myCanvas');
 
         drawPaddle = () => {
             ctx.beginPath();
-            ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
+            ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
