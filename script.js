@@ -70,6 +70,9 @@ let canvas = document.getElementById('myCanvas');
 
             if (rightPressed){
                 paddleX += 7;
+                if (paddleX + paddleWidth > canvas.width){
+                    paddleX = canvas.width - paddleWidth;
+                }
             }
             else if (leftPressed){
                 paddleX -= 7;
