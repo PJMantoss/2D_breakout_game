@@ -72,4 +72,8 @@ let canvas = document.getElementById('myCanvas');
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
 
+        keyDownHandler = (e) => {}
+
+        keyUpHandler = (e) => {}
+
         setInterval(draw, 10);
