@@ -28,6 +28,10 @@ let canvas = document.getElementById('myCanvas');
         let dy = -2;
         let ballRadius = 10;
 
+        let paddleHeight = 10;
+        let paddleWidth = 75;
+        let paddleX = (canvas.width-paddleWidth) / 2;
+
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
