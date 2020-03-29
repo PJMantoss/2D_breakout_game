@@ -36,6 +36,25 @@ let canvas = document.getElementById('myCanvas');
         let leftPressed = false;
         let rightPressed = false;
 
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+
+        keyDownHandler = (e) => {
+            if(e.key == "Right" || e.key == "ArrowRight"){
+                rightPressed = true;
+            }else if (e.key == "Left" || e.key == "ArrowLeft"){
+                leftPressed = true;
+            }
+        }
+
+        keyUpHandler = (e) => {
+            if (e.key == "Right" || e.key == "ArrowRight"){
+                rightPressed = false;
+            } else if (e.key == "Left" || e.key == "ArrowLeft"){
+                leftPressed = false;
+            }
+        }
+
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -80,25 +99,6 @@ let canvas = document.getElementById('myCanvas');
                 if(paddleX < 0){
                     paddleX = 0;
                 }
-            }
-        }
-
-        document.addEventListener("keydown", keyDownHandler, false);
-        document.addEventListener("keyup", keyUpHandler, false);
-
-        keyDownHandler = (e) => {
-            if(e.key == "Right" || e.key == "ArrowRight"){
-                rightPressed = true;
-            }else if (e.key == "Left" || e.key == "ArrowLeft"){
-                leftPressed = true;
-            }
-        }
-
-        keyUpHandler = (e) => {
-            if (e.key == "Right" || e.key == "ArrowRight"){
-                rightPressed = false;
-            } else if (e.key == "Left" || e.key == "ArrowLeft"){
-                leftPressed = false;
             }
         }
 
