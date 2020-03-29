@@ -76,6 +76,9 @@ let canvas = document.getElementById('myCanvas');
             }
             else if (leftPressed){
                 paddleX -= 7;
+                if(paddleX < 0){
+                    paddleX = 0;
+                }
             }
         }
 
