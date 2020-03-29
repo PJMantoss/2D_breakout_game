@@ -33,6 +33,9 @@ let canvas = document.getElementById('myCanvas');
         let paddleX = (canvas.width-paddleWidth) / 2;
         let paddleY = canvas.height-paddleHeight;
 
+        let leftPressed = false;
+        let rightPressed = false;
+
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
