@@ -31,6 +31,7 @@ let canvas = document.getElementById('myCanvas');
         let paddleHeight = 10;
         let paddleWidth = 75;
         let paddleX = (canvas.width-paddleWidth) / 2;
+        let paddleY = canvas.height-paddleHeight;
 
         drawBall = () => {
             ctx.beginPath();
