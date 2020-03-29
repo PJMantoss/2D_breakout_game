@@ -43,7 +43,7 @@ let canvas = document.getElementById('myCanvas');
 
         drawPaddle = () => {
             ctx.beginPath();
-            ctx.rect();
+            ctx.rect(paddleX, paddleY, paddleWidth, paddleHeight);
             ctx.fillStyle = "#0095DD";
             ctx.fill();
             ctx.closePath();
