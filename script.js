@@ -30,7 +30,7 @@ let canvas = document.getElementById('myCanvas');
 
         let paddleHeight = 10;
         let paddleWidth = 75;
-        let paddleX = (canvas.width-paddleWidth) / 2;
+        let paddleX = (canvas.width-paddleWidth)/2;
         //let paddleY = canvas.height-paddleHeight;
 
         let rightPressed = false;
@@ -39,7 +39,7 @@ let canvas = document.getElementById('myCanvas');
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
 
-        keyDownHandler = e => {
+        function keyDownHandler(e){
             if(e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = true;
             }
@@ -48,7 +48,7 @@ let canvas = document.getElementById('myCanvas');
             }
         }
 
-        keyUpHandler = e => {
+        function keyUpHandler(e){
             if (e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = false;
             } 
