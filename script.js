@@ -36,19 +36,14 @@ let canvas = document.getElementById('myCanvas');
         let rightPressed = false;
         let leftPressed = false;
 
-        /* Define Information about bricks:
-        - Number of rows and columns of bricks
-        - Width and height of bricks
-        - Padding between bricks so they won't be touching each other
-        - A top and left offset so they won't start from the edge of the canvas
-        */
-        let brickRowCount = 3;
+        // Define Information about bricks
+        let brickRowCount = 3; //Number of rows and columns of bricks
         let brickColumnCount = 5;
-        let brickWidth = 75;
+        let brickWidth = 75; //Width and height of bricks
         let brickHeight = 20;
-        let brickPadding = 10;
+        let brickPadding = 10; //Padding between bricks so they won't be touching each other
         let brickOffsetTop = 30;
-        let brickOffsetLeft = 30;
+        let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
