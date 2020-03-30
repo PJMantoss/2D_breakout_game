@@ -79,8 +79,12 @@ let canvas = document.getElementById('myCanvas');
             drawBall();
             drawPaddle();
 
-            if (y + dy > canvas.height-ballRadius || y + dy < ballRadius){
+            if (y + dy < ballRadius){
                 dy = -dy;
+            } else if (y + dy > canvas.height-ballRadius){
+                alert("GAME OVER");
+                document.location.reload();
+                classInterval(interval); // For Chrome to end game
             }
     
             if (x + dx > canvas.width-ballRadius || x + dx < ballRadius){
@@ -104,4 +108,4 @@ let canvas = document.getElementById('myCanvas');
             y += dy;
         }
 
-        setInterval(draw, 10);
+        let interval = setInterval(draw, 10);
