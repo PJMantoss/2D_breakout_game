@@ -45,6 +45,10 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetTop = 30;
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
+        // x and y positions of each brick
+        let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
+        let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+
         /*
         A 2D array to hold our bricks. Brick column(c) holds brick rows (r)
         which in turn holds an object containing positions (x & y) for painting
@@ -97,6 +101,7 @@ let canvas = document.getElementById('myCanvas');
             ctx.closePath();
         }
 
+        // drawBricks() loops through all the bricks and draw them on the screen
         function drawBricks(){
             for (let c = 0; c < brickColumnCount; c++){
                 for (let r = 0; r < brickRowCount; r++){
