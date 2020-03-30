@@ -87,7 +87,7 @@ let canvas = document.getElementById('myCanvas');
                 }else{
                     alert("GAME OVER");
                     document.location.reload();
-                    classInterval(interval); // For Chrome to end game
+                    clearInterval(interval); // For Chrome to end game
                 }
             }
     
@@ -96,13 +96,13 @@ let canvas = document.getElementById('myCanvas');
             }
 
             if (rightPressed){
-                paddleX += 7;
+                paddleX += 2;
                 if (paddleX + paddleWidth > canvas.width){
                     paddleX = canvas.width - paddleWidth;
                 }
             }
             else if (leftPressed){
-                paddleX -= 7;
+                paddleX -= 2;
                 if(paddleX < 0){
                     paddleX = 0;
                 }
