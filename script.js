@@ -45,6 +45,13 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetTop = 30;
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
+        let bricks = [];
+        for (let c = 0; c < brickColumnCount; c++){
+            bricks[c] = [];
+
+            for (let r = 0; r < brickRowCount; r++){}
+        }
+
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
 
