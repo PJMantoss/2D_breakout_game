@@ -36,6 +36,11 @@ let canvas = document.getElementById('myCanvas');
         let rightPressed = false;
         let leftPressed = false;
 
+        let brickRowCount = 3;
+        let brickColumnCount = 5;
+        let brickWidth = 75;
+        let brickHeight = 20;
+
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
 
