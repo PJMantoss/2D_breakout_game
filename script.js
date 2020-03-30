@@ -121,6 +121,7 @@ let canvas = document.getElementById('myCanvas');
         draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            drawBricks();
             drawBall();
             drawPaddle();
 
