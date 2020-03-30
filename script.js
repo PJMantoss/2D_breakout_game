@@ -58,6 +58,7 @@ let canvas = document.getElementById('myCanvas');
                 bricks[c][r] = {x: 0, y: 0};
             }
         }
+        //Code above will loop through rows and columns to create bricks on the screen
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
