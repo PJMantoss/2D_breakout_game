@@ -82,9 +82,13 @@ let canvas = document.getElementById('myCanvas');
             if (y + dy < ballRadius){
                 dy = -dy;
             } else if (y + dy > canvas.height-ballRadius){
-                alert("GAME OVER");
-                document.location.reload();
-                classInterval(interval); // For Chrome to end game
+                if(x > paddleX && x < paddleX + paddleWidth){
+                    dy = -dy;
+                }else{
+                    alert("GAME OVER");
+                    document.location.reload();
+                    classInterval(interval); // For Chrome to end game
+                }
             }
     
             if (x + dx > canvas.width-ballRadius || x + dx < ballRadius){
