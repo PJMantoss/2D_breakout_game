@@ -40,6 +40,9 @@ let canvas = document.getElementById('myCanvas');
         let brickColumnCount = 5;
         let brickWidth = 75;
         let brickHeight = 20;
+        let brickPadding = 10;
+        let brickOffsetTop = 30;
+        let brickOffsetLeft = 30;
 
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
