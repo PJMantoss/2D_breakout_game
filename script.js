@@ -45,11 +45,18 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetTop = 30;
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
+        /*
+        A 2D array to hold our bricks. Brick column(c) holds brick rows (r)
+        which in turn holds an object containing positions (x & y) for painting
+        our bricks on the screen.
+        */
         let bricks = [];
         for (let c = 0; c < brickColumnCount; c++){
             bricks[c] = [];
 
-            for (let r = 0; r < brickRowCount; r++){}
+            for (let r = 0; r < brickRowCount; r++){
+                bricks[c][r] = {x: 0, y: 0};
+            }
         }
 
         document.addEventListener("keydown", keyDownHandler, false);
