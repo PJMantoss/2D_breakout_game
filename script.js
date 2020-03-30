@@ -97,6 +97,21 @@ let canvas = document.getElementById('myCanvas');
             ctx.closePath();
         }
 
+        function drawBricks(){
+            for (let c = 0; c < brickColumnCount; c++){
+                for (let r = 0; r < brickRowCount; r++){
+                    bricks[c][r].x = 0;
+                    bricks[c][r].y = 0;
+
+                    ctx.beginPath();
+                    ctx.rect(0, 0, brickWidth, brickHeight);
+                    ctx.fillStyle = "#0095DD";
+                    ctx.fill();
+                    ctx.closePath()
+                }
+            }
+        }
+
         draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
