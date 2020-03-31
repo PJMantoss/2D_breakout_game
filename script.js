@@ -84,6 +84,7 @@ let canvas = document.getElementById('myCanvas');
         /* Collision detection function 
         that will loop through bricks & compare 
         bricks position with ball's coordinates*/
+        
         function collisionDetection(){
             for (let c = 0; c < brickColumnCount; c++){
                 
