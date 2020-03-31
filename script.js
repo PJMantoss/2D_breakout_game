@@ -90,8 +90,12 @@ let canvas = document.getElementById('myCanvas');
                 for (let r = 0; r < brickRowCount; r++){
                     bricks[c][r] = {x: 0, y: 0, status: 1} //status property to each brick obj
                     let b = bricks[c][r];
-                    if(x > b.x && b < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
-                        dy = -dy;
+                    //Tracking & updating brick status
+                    if(b.status == 1){
+                        if(x > b.x && b < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
+                            dy = -dy;
+                            b.status = 0;
+                        }
                     }
                 }
             }
@@ -118,7 +122,12 @@ let canvas = document.getElementById('myCanvas');
             for (let c = 0; c < brickColumnCount; c++){
                 for (let r = 0; r < brickRowCount; r++){
 
-                    //Check value of each brick's status property
+                    /*
+                    Check value of each brick's status property.
+                    If staus == 1 then draw brick, buf it's 0, then
+                    it means brick was hit by ball, therefore
+                    take it off the screen
+                    */
                     if(bricks[c][r].status == 1){
                         // x and y positions of each brick
                     let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
