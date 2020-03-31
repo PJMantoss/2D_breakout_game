@@ -81,6 +81,20 @@ let canvas = document.getElementById('myCanvas');
             }
         }
 
+        /* Collision detection function 
+        that will loop through bricks & compare 
+        bricks position with ball's coordinates*/
+        function collisionDetection(){
+            for (let c = 0; c < brickColumnCount; c++){
+                for (let r = 0; r < brickRowCount; r++){
+                    let b = bricks[c][r];
+                    if(x > b.x && b < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
+                        dy = -dy;
+                    }
+                }
+            }
+        }
+
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -114,17 +128,6 @@ let canvas = document.getElementById('myCanvas');
                     ctx.fillStyle = "#0095DD";
                     ctx.fill();
                     ctx.closePath()
-                }
-            }
-        }
-
-        /* Collision detection function 
-        that will loop through bricks & compare 
-        bricks position with ball's coordinates*/
-        function collisionDetection(){
-            for (let c = 0; c < brickColumnCount; c++){
-                for (let r = 0; r < brickRowCount; r++){
-                    let b = bricks[c][r];
                 }
             }
         } 
