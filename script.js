@@ -93,7 +93,7 @@ let canvas = document.getElementById('myCanvas');
                     
                     //Tracking & updating brick status
                     if(b.status == 1){
-                        if(x > b.x && b < b.x + brickWidth && y > b.y && y < b.y + brickHeight){
+                        if(x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight){
                             dy = -dy;
                             b.status = 0;
                         }
