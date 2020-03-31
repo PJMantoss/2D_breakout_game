@@ -86,10 +86,10 @@ let canvas = document.getElementById('myCanvas');
         bricks position with ball's coordinates*/
         function collisionDetection(){
             for (let c = 0; c < brickColumnCount; c++){
-                bricks[c] = [];
+                
                 for (let r = 0; r < brickRowCount; r++){
                     bricks[c][r] = {x: 0, y: 0, status: 1} //status property to each brick obj
-                    let b = bricks[c][r];
+                    
                     //Tracking & updating brick status
                     if(b.status == 1){
                         if(x > b.x && b < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
