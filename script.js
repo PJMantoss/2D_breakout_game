@@ -118,6 +118,17 @@ let canvas = document.getElementById('myCanvas');
             }
         }
 
+        /* Collision detection function 
+        that will loop through bricks & compare 
+        bricks position with ball's coordinates*/
+        function collisionDetection(){
+            for (let c = 0; c < brickColumnCount; c++){
+                for (let r = 0; r < brickRowCount; r++){
+                    let b = bricks[c][r];
+                }
+            }
+        } 
+
         draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
