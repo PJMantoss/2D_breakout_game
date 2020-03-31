@@ -100,6 +100,14 @@ let canvas = document.getElementById('myCanvas');
                             dy = -dy;
                             b.status = 0;
                             score++;
+
+                            /*Displaying a winning message after 
+                            all bricks have been destroyed*/
+                            if(score == brickRowCount * brickColumnCount){
+                                alert("YOU WIN, CONGRATULATIONS! YOUR SCORE: " + score);
+                                document.location.reload();
+                                clearInterval(interval);
+                            }
                         }
                     }
                 }
