@@ -45,6 +45,9 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetTop = 30;
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
+        //variable for recording score
+        let score = 0;
+        
         /*
         A 2D array to hold our bricks. Brick column(c) holds brick rows (r)
         which in turn holds an object containing positions (x & y) for painting
