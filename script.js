@@ -21,7 +21,7 @@ let canvas = document.getElementById('myCanvas');
 
         */
 
-        let x = canvas.width/2;
+        let x = canvas.width / 2;
         let y = canvas.height - 30;
 
         let dx = 2;
@@ -30,7 +30,7 @@ let canvas = document.getElementById('myCanvas');
 
         let paddleHeight = 10;
         let paddleWidth = 75;
-        let paddleX = (canvas.width-paddleWidth)/2;
+        let paddleX = (canvas.width - paddleWidth) / 2;
         //let paddleY = canvas.height-paddleHeight;
 
         let rightPressed = false;
@@ -55,7 +55,7 @@ let canvas = document.getElementById('myCanvas');
             bricks[c] = [];
 
             for (let r = 0; r < brickRowCount; r++){
-                bricks[c][r] = {x: 0, y: 0, status: 1};
+                bricks[c][r] = { x: 0, y: 0, status: 1 };
             }
         }
         //Code above will loop through rows and columns to create bricks on the screen
@@ -166,7 +166,8 @@ let canvas = document.getElementById('myCanvas');
                     if(y = y - paddleHeight){
                         dy = -dy;
                     }
-                }else{
+                }
+                else{
                     alert("GAME OVER");
                     document.location.reload();
                     clearInterval(interval); // For Chrome to end game
@@ -176,11 +177,11 @@ let canvas = document.getElementById('myCanvas');
  
 
             if (rightPressed && paddleX < canvas.width - paddleWidth){
-                paddleX += 7;
+                paddleX += 3;
                 
             }
             else if (leftPressed && paddleX > 0){
-                paddleX -= 7;
+                paddleX -= 3;
             }
 
             x += dx;
