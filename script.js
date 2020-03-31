@@ -99,6 +99,7 @@ let canvas = document.getElementById('myCanvas');
                         if(x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight){
                             dy = -dy;
                             b.status = 0;
+                            score++;
                         }
                     }
                 }
@@ -163,6 +164,7 @@ let canvas = document.getElementById('myCanvas');
             drawBricks();
             drawBall();
             drawPaddle();
+            drawScore();
             collisionDetection();
 
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius){
