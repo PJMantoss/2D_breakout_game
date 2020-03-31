@@ -55,7 +55,7 @@ let canvas = document.getElementById('myCanvas');
             bricks[c] = [];
 
             for (let r = 0; r < brickRowCount; r++){
-                bricks[c][r] = {x: 0, y: 0};
+                bricks[c][r] = {x: 0, y: 0, status: 1};
             }
         }
         //Code above will loop through rows and columns to create bricks on the screen
@@ -88,11 +88,11 @@ let canvas = document.getElementById('myCanvas');
             for (let c = 0; c < brickColumnCount; c++){
                 
                 for (let r = 0; r < brickRowCount; r++){
-                    bricks[c][r] = {x: 0, y: 0, status: 1} //status property to each brick obj
+                    let b = bricks[c][r]; //status property to each brick obj
                     
                     //Tracking & updating brick status
                     if(b.status == 1){
-                        if(x > b.x && b < b.x+brickWidth && y > b.y && y < b.y+brickHeight){
+                        if(x > b.x && b < b.x + brickWidth && y > b.y && y < b.y + brickHeight){
                             dy = -dy;
                             b.status = 0;
                         }
@@ -133,8 +133,8 @@ let canvas = document.getElementById('myCanvas');
                     let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
                     let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
 
-                    bricks[c][r].x = 0;
-                    bricks[c][r].y = 0;
+                    bricks[c][r].x = brickX;
+                    bricks[c][r].y = brickY;
 
                     ctx.beginPath();
                     ctx.rect(brickX, brickY, brickWidth, brickHeight);
@@ -154,11 +154,18 @@ let canvas = document.getElementById('myCanvas');
             drawPaddle();
             collisionDetection();
 
+            if (x + dx > canvas.width - ballRadius || x + dx < ballRadius){
+                dx = -dx;
+            }
+
             if (y + dy < ballRadius){
                 dy = -dy;
-            } else if (y + dy > canvas.height-ballRadius){
+            } 
+            else if (y + dy > canvas.height - ballRadius){
                 if(x > paddleX && x < paddleX + paddleWidth){
-                    dy = -dy;
+                    if(y = y - paddleHeight){
+                        dy = -dy;
+                    }
                 }else{
                     alert("GAME OVER");
                     document.location.reload();
@@ -166,21 +173,14 @@ let canvas = document.getElementById('myCanvas');
                 }
             }
     
-            if (x + dx > canvas.width-ballRadius || x + dx < ballRadius){
-                dx = -dx;
-            }
+ 
 
-            if (rightPressed){
-                paddleX += 2;
-                if (paddleX + paddleWidth > canvas.width){
-                    paddleX = canvas.width - paddleWidth;
-                }
+            if (rightPressed && paddleX < canvas.width - paddleWidth){
+                paddleX += 7;
+                
             }
-            else if (leftPressed){
-                paddleX -= 2;
-                if(paddleX < 0){
-                    paddleX = 0;
-                }
+            else if (leftPressed && paddleX > 0){
+                paddleX -= 7;
             }
 
             x += dx;
