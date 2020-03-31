@@ -152,6 +152,7 @@ let canvas = document.getElementById('myCanvas');
             drawBricks();
             drawBall();
             drawPaddle();
+            collisionDetection();
 
             if (y + dy < ballRadius){
                 dy = -dy;
