@@ -185,14 +185,14 @@ let canvas = document.getElementById('myCanvas');
             drawLives();
             collisionDetection();
 
-            //Bouncing the left and right edges
+            //Bouncing off the left and right edges
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius){
                 dx = -dx;
             }
             //Bouncing off the top and bottom edges
             if (y + dy < ballRadius){
                 dy = -dy;
-            } 
+            } //Logic for letting the paddle hit the ball and implementing 'Game Over'.
             else if (y + dy > canvas.height - ballRadius){
                 if(x > paddleX && x < paddleX + paddleWidth){
                     if(y = y - paddleHeight){
@@ -216,8 +216,7 @@ let canvas = document.getElementById('myCanvas');
                 }
             }
     
- 
-
+            //Logic to move paddle on screen left or right using cursor keys
             if (rightPressed && paddleX < canvas.width - paddleWidth){
                 paddleX += 3;
                 
