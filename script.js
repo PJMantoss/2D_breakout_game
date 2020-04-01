@@ -6,6 +6,7 @@ let canvas = document.getElementById('myCanvas');
         let x = canvas.width / 2;
         let y = canvas.height - 30;
 
+        //Making ball to move
         let dx = 2;
         let dy = -2;
         let ballRadius = 10;
@@ -171,6 +172,7 @@ let canvas = document.getElementById('myCanvas');
 
         //Defining a drawing loop
         draw = () => {
+            //Clearing the canvas before each frame (fixes the issue of ball leaving a trail). 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             drawBricks();
@@ -180,10 +182,11 @@ let canvas = document.getElementById('myCanvas');
             drawLives();
             collisionDetection();
 
+            //Bouncing the left and right edges
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius){
                 dx = -dx;
             }
-
+            //Bouncing off the top and bottom edges
             if (y + dy < ballRadius){
                 dy = -dy;
             } 
