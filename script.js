@@ -193,6 +193,7 @@ let canvas = document.getElementById('myCanvas');
             drawBall();
             drawPaddle();
             drawScore();
+            drawLives();
             collisionDetection();
 
             if (x + dx > canvas.width - ballRadius || x + dx < ballRadius){
