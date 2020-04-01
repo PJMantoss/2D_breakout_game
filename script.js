@@ -10,11 +10,13 @@ let canvas = document.getElementById('myCanvas');
         let dx = 2;
         let dy = -2;
         let ballRadius = 10;
-
+        
+        //Defining a paddle to hit the ball
         let paddleHeight = 10;
         let paddleWidth = 75;
         let paddleX = (canvas.width - paddleWidth) / 2;
 
+        //Allowing the user to control the paddle
         let rightPressed = false;
         let leftPressed = false;
 
@@ -48,10 +50,10 @@ let canvas = document.getElementById('myCanvas');
         }
         //Code above will loop through rows and columns to create bricks on the screen
 
-        //Listening for key presses
+        //T Listen for key presses
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
-        //Listening for mouse movement
+        //To Listen for mouse movement
         document.addEventListener("mousemove", mouseMoveHandler, false);
 
         function keyDownHandler(e){
@@ -133,6 +135,7 @@ let canvas = document.getElementById('myCanvas');
             ctx.closePath();
         }
 
+        //To create the paddle on the screen
         drawPaddle = () => {
             ctx.beginPath();
             ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
