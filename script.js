@@ -77,7 +77,7 @@ let canvas = document.getElementById('myCanvas');
         //Anchoring the paddle movement to the mouse movement
         function mouseMoveHandler(e){
             let relativeX = e.clientX - canvas.offsetLeft;
-            if (relativeX > 0 && relativeX < canvas.width-paddleWidth/2){
+            if (relativeX > 0 && relativeX < canvas.width){
                 paddleX = relativeX - paddleWidth / 2;
             }
         }
