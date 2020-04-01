@@ -119,7 +119,7 @@ let canvas = document.getElementById('myCanvas');
                             if(score == brickRowCount * brickColumnCount){
                                 alert("YOU WIN, CONGRATULATIONS! YOUR SCORE: " + score);
                                 document.location.reload();
-                                clearInterval(interval);
+                                //clearInterval(interval);
                             }
                         }
                     }
@@ -214,7 +214,7 @@ let canvas = document.getElementById('myCanvas');
                     if(!lives){
                         alert("GAME OVER");
                         document.location.reload();
-                        clearInterval(interval); // For Chrome to end game
+                        //clearInterval(interval); //For Chrome to end game
                     }
                     else{
                         x = canvas.width / 2;
@@ -238,6 +238,9 @@ let canvas = document.getElementById('myCanvas');
 
             x += dx;
             y += dy;
+
+            requestAnimationFrame(draw);
         }
 
-        let interval = setInterval(draw, 10);
+        //let interval = setInterval(draw, 10);
+        draw();
