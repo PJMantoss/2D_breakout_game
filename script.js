@@ -45,10 +45,10 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
         //variable for recording score
-        let score = 3;
+        let score = 0;
 
         //Variable to store the number of lives for a player
-        let lives = 0;
+        let lives = 3;
 
         /*
         A 2D array to hold our bricks. Brick column(c) holds brick rows (r)
