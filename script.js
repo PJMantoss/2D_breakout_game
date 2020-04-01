@@ -69,6 +69,14 @@ let canvas = document.getElementById('myCanvas');
         //Listening for mouse movement
         document.addEventListener("mousemove", mouseMoveHandler, false);
 
+        //Anchoring the paddle movement to the mouse movement
+        function mouseMoveHandler(e){
+            let relativeX = e.clientX - canvas.offsetLeft;
+            if (relativeX > 0 && relativeX < canvas.width){
+                paddleX = relativeX - paddleWidth / 2;
+            }
+        }
+
         function keyDownHandler(e){
             if(e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = true;
