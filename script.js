@@ -63,8 +63,11 @@ let canvas = document.getElementById('myCanvas');
         }
         //Code above will loop through rows and columns to create bricks on the screen
 
+        //Listening for key presses
         document.addEventListener("keydown", keyDownHandler, false);
         document.addEventListener("keyup", keyUpHandler, false);
+        //Listening for mouse movement
+        document.addEventListener("mousemove", mouseMoveHandler, false);
 
         function keyDownHandler(e){
             if(e.key == "Right" || e.key == "ArrowRight"){
