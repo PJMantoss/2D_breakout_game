@@ -31,7 +31,6 @@ let canvas = document.getElementById('myCanvas');
         let paddleHeight = 10;
         let paddleWidth = 75;
         let paddleX = (canvas.width - paddleWidth) / 2;
-        //let paddleY = canvas.height-paddleHeight;
 
         let rightPressed = false;
         let leftPressed = false;
@@ -69,14 +68,6 @@ let canvas = document.getElementById('myCanvas');
         //Listening for mouse movement
         document.addEventListener("mousemove", mouseMoveHandler, false);
 
-        //Anchoring the paddle movement to the mouse movement
-        function mouseMoveHandler(e){
-            let relativeX = e.clientX - canvas.offsetLeft;
-            if (relativeX > 0 && relativeX < canvas.width){
-                paddleX = relativeX - paddleWidth / 2;
-            }
-        }
-
         function keyDownHandler(e){
             if(e.key == "Right" || e.key == "ArrowRight"){
                 rightPressed = true;
@@ -92,6 +83,14 @@ let canvas = document.getElementById('myCanvas');
             } 
             else if(e.key == "Left" || e.key == "ArrowLeft"){
                 leftPressed = false;
+            }
+        }
+
+        //Anchoring the paddle movement to the mouse movement
+        function mouseMoveHandler(e){
+            let relativeX = e.clientX - canvas.offsetLeft;
+            if (relativeX > 0 && relativeX < canvas.width-paddleWidth/2){
+                paddleX = relativeX - paddleWidth / 2;
             }
         }
 
