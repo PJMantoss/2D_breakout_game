@@ -25,14 +25,38 @@ canvas {
     align-items: center;
 }
 
+#love > span {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(37, 37, 37);
+}
+
 #love > img {
     width: 34px;
     padding: 10px;
+}
+
+#love > span > a {
+    text-decoration: none;
+    color: rgb(4, 80, 4);
 }
 
 @media (max-width: 700px){
     canvas {
         width: 80%;
         margin: 30px auto;
+    }
+
+    #love {
+        flex-wrap: wrap;
+    }
+
+    #love > span {
+        font-size: 14px;
+    }
+
+    #love > img {
+        width: 28px;
     }
 }
