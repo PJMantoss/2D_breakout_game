@@ -47,6 +47,9 @@ let canvas = document.getElementById('myCanvas');
         //variable for recording score
         let score = 0;
 
+        //Variable to store the number of lives for a player
+        let lives = 0;
+
         /*
         A 2D array to hold our bricks. Brick column(c) holds brick rows (r)
         which in turn holds an object containing positions (x & y) for painting
@@ -129,6 +132,13 @@ let canvas = document.getElementById('myCanvas');
             ctx.font = "16px Arial";
             ctx.fillStyle = "#0095DD";
             ctx.fillText("Score: " + score, 8, 20);
+        }
+
+        //Giving the player some lives
+        function drawLives(){
+            ctx.font = "16px Arial";
+            ctx.fillStyle = "#0095DD";
+            ctx.fillText("Lives: " + lives, canvas.width-65, 20);
         }
 
         drawBall = () => {
