@@ -20,7 +20,7 @@ let canvas = document.getElementById('myCanvas');
         let rightPressed = false;
         let leftPressed = false;
 
-        // Define Information about bricks
+        // Brick variables
         let brickRowCount = 3; //Number of rows and columns of bricks
         let brickColumnCount = 5;
         let brickWidth = 75; //Width and height of bricks
