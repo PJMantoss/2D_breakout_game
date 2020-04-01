@@ -2,6 +2,7 @@ let canvas = document.getElementById('myCanvas');
         //variable to store the 2D rendering context
         let ctx = canvas.getContext("2d");
 
+        //Defining the starting point of ball at the bottom center of canvas
         let x = canvas.width / 2;
         let y = canvas.height - 30;
 
@@ -122,6 +123,7 @@ let canvas = document.getElementById('myCanvas');
             ctx.fillText("Lives: " + lives, canvas.width-65, 20);
         }
 
+        //Draw ball
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
@@ -167,6 +169,7 @@ let canvas = document.getElementById('myCanvas');
             }
         } 
 
+        //Defining a drawing loop
         draw = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
