@@ -111,21 +111,21 @@ let canvas = document.getElementById('myCanvas');
         //function to create and update score display
         function drawScore(){
             ctx.font = "16px Arial";
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "#FFFFFF";
             ctx.fillText("Score: " + score, 8, 20);
         }
 
         //Giving the player some lives
         function drawLives(){
             ctx.font = "16px Arial";
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "#FFFFFF";
             ctx.fillText("Lives: " + lives, canvas.width-65, 20);
         }
 
         drawBall = () => {
             ctx.beginPath();
             ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "#FFFFFF";
             ctx.fill();
             ctx.closePath();
         }
@@ -133,7 +133,7 @@ let canvas = document.getElementById('myCanvas');
         drawPaddle = () => {
             ctx.beginPath();
             ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-            ctx.fillStyle = "#0095DD";
+            ctx.fillStyle = "#FFFFFF";
             ctx.fill();
             ctx.closePath();
         }
@@ -159,7 +159,7 @@ let canvas = document.getElementById('myCanvas');
 
                     ctx.beginPath();
                     ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                    ctx.fillStyle = "#0095DD";
+                    ctx.fillStyle = "#FF6347";
                     ctx.fill();
                     ctx.closePath()
                     }
