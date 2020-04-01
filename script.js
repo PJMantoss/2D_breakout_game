@@ -45,7 +45,7 @@ let canvas = document.getElementById('myCanvas');
         let brickOffsetLeft = 30; //A top and left offset so they won't start from the edge of the canvas
 
         //variable for recording score
-        let score = 0;
+        let score = 3;
 
         //Variable to store the number of lives for a player
         let lives = 0;
@@ -209,9 +209,19 @@ let canvas = document.getElementById('myCanvas');
                     }
                 }
                 else{
-                    alert("GAME OVER");
-                    document.location.reload();
-                    clearInterval(interval); // For Chrome to end game
+                    lives--;
+                    if(!lives){
+                        alert("GAME OVER");
+                        document.location.reload();
+                        clearInterval(interval); // For Chrome to end game
+                    }
+                    else{
+                        x = canvas.width / 2;
+                        y = canvas.height - 30;
+                        dx = 2;
+                        dy = -2;
+                        paddleX = (canvas.width - paddleWidth) / 2;
+                    }
                 }
             }
     
