@@ -42,10 +42,11 @@ canvas {
     color: rgb(4, 80, 4);
 }
 
-@media (max-width: 700px){
+@media (max-width: 800px){
     canvas {
         width: 80%;
         margin: 30px auto;
+        height: auto;
     }
 
     #love {
